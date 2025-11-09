@@ -6,21 +6,32 @@ import java.io.IOException;
 
 import business.Artikel;
 
-public class ConcreteCsvReaderProduct extends ReaderCreator{
-	public void leseArtikelAusCsvDatei(Artikel[] artikel) throws IOException{
+public class ConcreteCsvReaderProduct extends ReaderProduct{
+
+	@Override
+	public int leseAnzahlArtikel() throws IOException {
+		int anzahlArtikel=0;
 		BufferedReader ein = new BufferedReader(new FileReader("Artikel.csv"));
-		int anzahlArtikel=Integer.parseInt(ein.readLine());
+		anzahlArtikel=Integer.parseInt(ein.readLine());
+		
+		ein.close();
+		return anzahlArtikel;
+	}
+
+	@Override
+	public Artikel[] leseArtikel() throws IOException {
+		Artikel[] artikel = new Artikel[100];
+		BufferedReader ein = new BufferedReader(new FileReader("Artikel.csv"));
+		int anzahlArtikel = Integer.parseInt(ein.readLine());
 		String[] zeile = null;
 		for(int i = 0; i < anzahlArtikel; i++) {
 			zeile = ein.readLine().split(";");
 			artikel[i] = new Artikel(
-			Integer.parseInt(zeile[0]), zeile[1],
-			Double.parseDouble(zeile[2]));
-	}    
-    ein.close();
-	
+				Integer.parseInt(zeile[0]), zeile[1],
+				Double.parseDouble(zeile[2]));
+		}    
+	    ein.close();
+		return artikel;
 	}
-
-	
 	
 }

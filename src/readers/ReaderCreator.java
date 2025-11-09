@@ -1,5 +1,5 @@
 package readers;
 
-public class ReaderCreator {
-
+public abstract class ReaderCreator {
+	public abstract ReaderProduct factoryMethode();
 }

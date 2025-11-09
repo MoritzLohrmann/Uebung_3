@@ -9,7 +9,7 @@ import business.Artikel;
 public class ConcreteTxtWriterProduct extends WriterProduct{
 
 	@Override
-	public void schreibeArtikel(int anzahlArtikel, Artikel[] artikel) throws IOException {
+	public void schreibeArtikel(int anzahlArtikel, Artikel[] artikel) throws IOException{
 		BufferedWriter aus = new BufferedWriter(new FileWriter("Artikel.txt"));
 		aus.write(anzahlArtikel + "");
 		aus.newLine();
@@ -22,10 +22,6 @@ public class ConcreteTxtWriterProduct extends WriterProduct{
 			aus.newLine();
 		}    
 		aus.close();
-		
 	}
-
-	
-	
 
 }

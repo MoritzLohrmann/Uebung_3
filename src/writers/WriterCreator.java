@@ -1,5 +1,6 @@
 package writers;
 
-public class WriterCreator {
+public abstract class WriterCreator {
+	public abstract WriterProduct factoryMethode(String type);
 
 }

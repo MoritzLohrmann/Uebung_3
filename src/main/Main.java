@@ -10,7 +10,9 @@ public class Main {
 		ArtikelModel artikelModel = new ArtikelModel();
 		try {
 			artikelModel.leseArtikelAusCsvDatei();
-			artikelModel.schreibeArtikelInTxtDatei();
+//			artikelModel.schreibeArtikelInTxtDatei();
+//			artikelModel.schreibeArtikelInKonsole();
+			artikelModel.schreibeArtikelInDatei();
 			
 		} 
 		catch (IOException e) {
